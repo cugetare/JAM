@@ -1,0 +1,14 @@
+{
+  "company": "Fictional Systems GmbH",
+  "job_title": "Senior Platform Engineer",
+  "job_id": "FS-100",
+  "location": "Berlin",
+  "country": "Germany",
+  "job_url": "https://example.invalid/jobs/fs-100",
+  "source": "Company website",
+  "application_language": "DE",
+  "status": "Identified",
+  "application_strategy": "Emphasize reliable platforms and engineering leadership.",
+  "recommended_cv_changes": "Move the platform reliability project into the first experience section.",
+  "job_description_text": "Fictional example only. No real company or vacancy."
+}
