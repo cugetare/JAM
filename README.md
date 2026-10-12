@@ -1,14 +1,41 @@
-# JAM — Local-first Job Application Manager
+# JAM — Job Application Manager
 
-JAM is a local Windows application for organizing job descriptions, working
-documents, submissions, communications, follow-ups, and the German
-`Bewerbungsliste`. It uses Streamlit for the first UI, SQLite for structured
-data, and ordinary folders for documents.
+**Local-first Windows app for managing job applications end to end** — from a
+pasted job description to an auditable, submission-ready PDF package.
+
+JAM organizes job descriptions, working documents, submissions,
+communications, follow-ups, and the German `Bewerbungsliste`. It uses
+Streamlit for the UI, SQLite for structured data, and ordinary folders for
+documents. An optional OpenAI analyst scores the match, proposes an
+application strategy, and drafts CV recommendations and cover-letter content.
+Every AI suggestion is previewed and must be explicitly accepted.
 
 JAM **does not rewrite arbitrary DOCX content**. It creates safe working copies,
-stores structured CV recommendations, and can replace only explicit `{{TOKEN}}`
+stores structured CV recommendations, and replaces only explicit `{{TOKEN}}`
 fields in the supplied cover-letter templates. Master and submitted documents
 are treated as immutable.
+
+| | |
+| --- | --- |
+| **Status** | Working MVP, in personal use since July 2026 |
+| **Author** | Dan Glogoveanu |
+| **Stack** | Python 3.12 · Streamlit · SQLite · python-docx · openpyxl · OpenAI API |
+| **Platform** | Windows (local, binds to `127.0.0.1` only) |
+
+## Quick start
+
+```powershell
+git clone https://github.com/cugetare/JAM.git
+cd JAM
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e ".[dev]"
+Copy-Item config.example.toml config.toml   # then edit the paths
+.\.venv\Scripts\streamlit.exe run streamlit_app.py
+```
+
+A packaged Windows build (no Python required) is published under
+**Releases**, not in the repository.
 
 ## What works
 
@@ -329,5 +356,22 @@ Unknown or unresolved tokens stop generation with an error.
 contains placeholder-only sample data. Importing it is not automatic, so JAM
 will not create sample records in a real database without an explicit user
 action.
-#   J A M - J o b - A p p l i c a t i o n - M a n a g e r -  
- 
+
+
+## Provenance
+
+JAM was designed and built by Dan Glogoveanu as a personal project in
+July 2026 (first working build and Windows package: 24–28 July 2026). The
+repository was published to GitHub on 12 October 2026; development history
+before that date was kept locally.
+
+JAM is the conceptual basis for **CareerPilot**, a product developed by
+Group 5 of the Ironhack AI Product Management bootcamp (October 2026), where
+it was presented to the team as prior work.
+
+## License
+
+Copyright © 2026 Dan Glogoveanu. All rights reserved.
+
+This source code is shared for reference only. No license is granted to use,
+copy, modify, or distribute it without written permission from the author.

@@ -1,17 +1,22 @@
+# Python / tooling
 .venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
-data/
-*.db
-*.sqlite3
 *.egg-info/
-exports/
+
+# Build output
 build/
 dist/
 JAM.exe
-
 Delivery/
+
+# Personal / local data (never commit)
 config.toml
+data/
+*.db
+*.sqlite3
+exports/
 tmp/
+.agents/
